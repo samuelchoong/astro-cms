@@ -1,15 +1,19 @@
 backend:
   name: github
-  repo: your-org/your-portfolio-repo
+  repo: samuelchoong/astro-cms
   branch: main
-  base_url: https://oauth.samuelchoong.com
+  base_url: https://decap-oauth-proxy.samuelchoong.workers.dev
   auth_endpoint: /auth
+
+site_url: https://decap-astro-sam.pages.dev
+display_url: https://decap-astro-sam.pages.dev
 
 publish_mode: editorial_workflow
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-local_backend: true
+# Use true only for local development with `npx decap-server`.
+local_backend: false
 
 collections:
   - name: "articles"
@@ -21,11 +25,39 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "string", hint: "Max 180 characters" }
-      - { label: "Publish Date", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Updated Date", name: "updatedDate", widget: "datetime", required: false, date_format: "YYYY-MM-DD", time_format: false }
+      - {
+          label: "Summary",
+          name: "summary",
+          widget: "string",
+          hint: "Max 180 characters",
+        }
+      - {
+          label: "Publish Date",
+          name: "publishDate",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
+      - {
+          label: "Updated Date",
+          name: "updatedDate",
+          widget: "datetime",
+          required: false,
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Cover Image", name: "coverImage", widget: "image", required: false }
+      - {
+          label: "Cover Image",
+          name: "coverImage",
+          widget: "image",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown" }
