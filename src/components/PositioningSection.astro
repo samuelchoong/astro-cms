@@ -1,0 +1,93 @@
+<section id="positioning" class="section">
+  <div class="container surface wrapper">
+    <div class="intro">
+      <span class="eyebrow">Why Work With Me ✨</span>
+      <h2 class="h2">I turn ideas into real systems that people can use.</h2>
+      <p class="lead">
+        Many people only do coding, or only do business planning. I do both together so the system works in real life and supports
+        growth.
+      </p>
+      <img src="/images/neural-signal-map.svg" alt="AI generated neural signal map visual" class="visual" />
+    </div>
+
+    <div class="grid pillars">
+      <article>
+        <h3><i class="fa-solid fa-microchip"></i> AI Infrastructure</h3>
+        <p>I connect AI tools so they work as one smart system.</p>
+      </article>
+      <article>
+        <h3><i class="fa-solid fa-gears"></i> Automation Engineering</h3>
+        <p>I automate workflows so work gets done with less manual effort.</p>
+      </article>
+      <article>
+        <h3><i class="fa-solid fa-coins"></i> SaaS Economics</h3>
+        <p>I design product and pricing models that help software businesses grow.</p>
+      </article>
+      <article>
+        <h3><i class="fa-solid fa-user-shield"></i> Governance & Control</h3>
+        <p>I add safety rules and access control so teams can trust the system.</p>
+      </article>
+      <article>
+        <h3><i class="fa-solid fa-square-poll-vertical"></i> Quantitative Logic</h3>
+        <p>I use data and clear logic to improve results over time.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wrapper {
+    padding: 1.4rem;
+  }
+
+  .intro {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .visual {
+    width: min(680px, 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(57, 231, 255, 0.4);
+  }
+
+  .pillars {
+    margin-top: 1.2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  article {
+    border: 1px solid rgba(146, 171, 255, 0.3);
+    border-radius: 16px;
+    padding: 0.9rem;
+    background: rgba(8, 18, 43, 0.5);
+  }
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+  }
+
+  h3 i {
+    color: #ffd26f;
+    margin-right: 0.42rem;
+  }
+
+  p {
+    margin: 0;
+    color: #bed0f7;
+    font-size: 0.94rem;
+  }
+
+  @media (max-width: 980px) {
+    .pillars {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pillars {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

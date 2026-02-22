@@ -1,0 +1,24 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <g opacity="0.6">
+    <circle cx="600" cy="380" r="230" stroke="#39E7FF" stroke-width="2"/>
+    <circle cx="600" cy="380" r="170" stroke="#76FFB4" stroke-width="2"/>
+    <circle cx="600" cy="380" r="110" stroke="#FFD26F" stroke-width="2"/>
+  </g>
+  <circle cx="600" cy="380" r="54" fill="#0A1B3D" stroke="#39E7FF" stroke-width="2"/>
+  <circle cx="600" cy="380" r="18" fill="#39E7FF"/>
+  <circle cx="840" cy="380" r="10" fill="#39E7FF"/>
+  <circle cx="460" cy="550" r="10" fill="#76FFB4"/>
+  <circle cx="503" cy="236" r="10" fill="#FFD26F"/>
+  <path d="M210 620L420 490L600 560L780 410L1030 520" stroke="#76FFB4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M160 230L350 310L520 210L740 290L980 180" stroke="#39E7FF" stroke-width="4" stroke-linecap="round"/>
+  <rect x="98" y="100" width="220" height="90" rx="16" fill="#0C2454" stroke="#2CCEE7"/>
+  <text x="126" y="145" fill="#C6EEFF" font-size="24" font-family="Space Grotesk, Arial, sans-serif">AI Control Plane</text>
+  <defs>
+    <linearGradient id="bg" x1="50" y1="40" x2="1090" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061029"/>
+      <stop offset="0.48" stop-color="#122A5C"/>
+      <stop offset="1" stop-color="#0A1639"/>
+    </linearGradient>
+  </defs>
+</svg>

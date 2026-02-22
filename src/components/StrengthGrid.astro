@@ -1,0 +1,96 @@
+---
+const strengths = [
+  {
+    title: 'AI Workflow Control Center',
+    body: 'A dashboard concept that routes tasks to the right AI model and tracks team usage in one place.',
+    icon: 'fa-solid fa-diagram-project',
+    emoji: '🧠'
+  },
+  {
+    title: 'Lead Outreach Automation Engine',
+    body: 'An outreach system that finds leads, creates personalized messages, and sends follow-ups automatically.',
+    icon: 'fa-solid fa-robot',
+    emoji: '⚙️'
+  },
+  {
+    title: 'SaaS Revenue Ops Layer',
+    body: 'A billing and pricing logic layer designed to support upgrades, role-based access, and enterprise plans.',
+    icon: 'fa-solid fa-cubes-stacked',
+    emoji: '📈'
+  },
+  {
+    title: 'AI Governance Guardrails',
+    body: 'A policy-first setup for safe AI use with approvals, audit logs, and sensitive-data routing.',
+    icon: 'fa-solid fa-shield-halved',
+    emoji: '🛡️'
+  },
+  {
+    title: 'Decision Signal Board',
+    body: 'A simple analytics system for tracking what decisions are working and where to improve next.',
+    icon: 'fa-solid fa-chart-column',
+    emoji: '📊'
+  },
+  {
+    title: 'Content Distribution Machine',
+    body: 'A publishing workflow that turns one idea into multi-channel content for growth and lead generation.',
+    icon: 'fa-solid fa-bullhorn',
+    emoji: '📣'
+  }
+];
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <span class="eyebrow">Projects</span>
+    <h2 class="h2">Examples of systems I build.</h2>
+    <p class="lead">
+      Inspired by a simple project-list style, these cards show the type of practical AI and automation systems I deliver.
+    </p>
+
+    <div class="grid cards">
+      {strengths.map((item, index) => (
+        <article class="surface card reveal" style={`--delay:${90 + index * 70}ms`}>
+          <p class="idx"><i class={item.icon}></i> 0{index + 1} {item.emoji}</p>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cards {
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .idx {
+    margin: 0;
+    font-weight: 700;
+    color: #76ffb4;
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+    font-size: 1.12rem;
+  }
+
+  .card > p:not(.idx) {
+    margin: 0;
+    color: #c8d7fb;
+  }
+
+  @media (max-width: 900px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

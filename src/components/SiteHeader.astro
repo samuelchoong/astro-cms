@@ -1,0 +1,68 @@
+---
+const links = [
+  { href: '#about', label: 'About me' },
+  { href: '#projects', label: 'Projects' },
+  { href: '/articles', label: 'Articles' },
+  { href: '#contact', label: 'Contact' }
+];
+---
+
+<header class="header">
+  <div class="container row">
+    <a href="/" class="brand">Samuel Choong</a>
+    <nav>
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(4, 7, 18, 0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(146, 171, 255, 0.2);
+  }
+
+  .row {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.94rem;
+    color: #dbe6ff;
+  }
+
+  nav a {
+    padding: 0.3rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  nav a:hover {
+    background: rgba(57, 231, 255, 0.12);
+  }
+
+  @media (max-width: 760px) {
+    nav {
+      gap: 0.4rem;
+      font-size: 0.86rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+</style>

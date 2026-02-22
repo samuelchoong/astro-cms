@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import StrengthGrid from '../components/StrengthGrid.astro';
+import PositioningSection from '../components/PositioningSection.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const latestArticles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout title="Samuel Choong | AI Systems Architect">
+  <SiteHeader />
+  <main>
+    <HeroSection />
+    <StrengthGrid />
+    <PositioningSection />
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Latest Articles</span>
+        <h2 class="h2">Simple ideas on AI, automation, and business growth.</h2>
+        <div class="grid cards">
+          {latestArticles.map((article, index) => (
+            <ArticleCard
+              title={article.data.title}
+              summary={article.data.summary}
+              href={`/articles/${article.slug}/`}
+              publishDate={article.data.publishDate}
+              tags={article.data.tags}
+              delay={80 + index * 70}
+            />
+          ))}
+        </div>
+        <p class="view-all"><a href="/articles" class="btn btn-secondary">View All Articles</a></p>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .cards {
+    margin-top: 1.2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .view-all {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 960px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

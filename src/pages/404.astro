@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 | Page Not Found">
+  <main class="section">
+    <div class="container surface card">
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p>The page you requested does not exist.</p>
+      <p><a href="/" class="btn btn-primary">Back Home</a></p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .card {
+    padding: 1.3rem;
+    max-width: 640px;
+  }
+
+  h1 {
+    margin: 0.6rem 0;
+  }
+</style>

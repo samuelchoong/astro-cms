@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: your-org/your-portfolio-repo
+  branch: main
+  base_url: https://oauth.samuelchoong.com
+  auth_endpoint: /auth
+
+publish_mode: editorial_workflow
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+local_backend: true
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "src/content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", hint: "Max 180 characters" }
+      - { label: "Publish Date", name: "publishDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Updated Date", name: "updatedDate", widget: "datetime", required: false, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Cover Image", name: "coverImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

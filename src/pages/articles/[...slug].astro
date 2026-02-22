@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: article
+  }));
+}
+
+const article = Astro.props as CollectionEntry<'articles'>;
+const { Content } = await render(article);
+
+const publishLabel = article.data.publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={`${article.data.title} | Samuel Choong`} description={article.data.summary}>
+  <SiteHeader />
+  <main class="section">
+    <article class="container surface prose">
+      <p class="eyebrow">{publishLabel}</p>
+      <h1>{article.data.title}</h1>
+      <p class="summary">{article.data.summary}</p>
+      <Content />
+    </article>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .prose {
+    padding: 1.4rem;
+    max-width: 850px;
+  }
+
+  h1 {
+    margin: 0.8rem 0;
+    line-height: 1.14;
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  }
+
+  .summary {
+    color: #c2d4fb;
+    margin: 0 0 1.4rem;
+    max-width: 65ch;
+  }
+
+  :global(.prose h2) {
+    margin-top: 1.6rem;
+  }
+
+  :global(.prose p),
+  :global(.prose li) {
+    color: #dce6ff;
+  }
+
+  :global(.prose a) {
+    color: #39e7ff;
+    text-decoration: underline;
+  }
+</style>

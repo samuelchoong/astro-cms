@@ -1,0 +1,18 @@
+{
+  "name": "samuel-choong-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.2.0",
+    "zod": "^3.24.1"
+  }
+}

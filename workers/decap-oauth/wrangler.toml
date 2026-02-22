@@ -1,0 +1,8 @@
+name = "decap-oauth-proxy"
+main = "src/index.ts"
+compatibility_date = "2025-12-01"
+
+[vars]
+OAUTH_AUTHORIZE_URL = "https://github.com/login/oauth/authorize"
+OAUTH_TOKEN_URL = "https://github.com/login/oauth/access_token"
+SCOPES = "repo,user"

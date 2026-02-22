@@ -1,0 +1,28 @@
+<svg width="1400" height="540" viewBox="0 0 1400 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="540" rx="26" fill="url(#bg2)"/>
+  <g opacity="0.85">
+    <path d="M120 400C220 300 280 250 380 260C500 272 550 420 700 380C820 348 890 180 1020 200C1120 214 1180 280 1280 260" stroke="#39E7FF" stroke-width="4"/>
+    <path d="M120 320C240 280 280 180 400 180C540 180 580 320 710 300C830 282 920 130 1030 130C1130 130 1190 200 1280 170" stroke="#76FFB4" stroke-width="4"/>
+    <path d="M120 230C220 230 310 110 420 110C550 110 600 200 730 210C850 220 960 80 1080 80C1160 80 1210 140 1280 120" stroke="#FFD26F" stroke-width="4"/>
+  </g>
+  <g fill="#DDF7FF">
+    <circle cx="380" cy="260" r="8"/>
+    <circle cx="700" cy="380" r="8"/>
+    <circle cx="1020" cy="200" r="8"/>
+    <circle cx="400" cy="180" r="8"/>
+    <circle cx="710" cy="300" r="8"/>
+    <circle cx="1030" cy="130" r="8"/>
+    <circle cx="420" cy="110" r="8"/>
+    <circle cx="730" cy="210" r="8"/>
+    <circle cx="1080" cy="80" r="8"/>
+  </g>
+  <rect x="74" y="70" width="280" height="64" rx="14" fill="#081D45" stroke="#2CCEE7"/>
+  <text x="102" y="111" fill="#C6EEFF" font-size="24" font-family="Space Grotesk, Arial, sans-serif">System Signal Graph</text>
+  <defs>
+    <linearGradient id="bg2" x1="40" y1="22" x2="1340" y2="505" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071028"/>
+      <stop offset="0.52" stop-color="#172F63"/>
+      <stop offset="1" stop-color="#0B1739"/>
+    </linearGradient>
+  </defs>
+</svg>

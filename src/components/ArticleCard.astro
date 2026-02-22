@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  href: string;
+  publishDate: Date;
+  tags: string[];
+  delay?: number;
+}
+
+const { title, summary, href, publishDate, tags, delay = 0 } = Astro.props;
+const dateLabel = publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
+---
+
+<article class="surface card reveal" style={`--delay:${delay}ms`}>
+  <p class="meta">{dateLabel}</p>
+  <h3><a href={href}>{title}</a></h3>
+  <p class="summary">{summary}</p>
+  <ul>
+    {tags.slice(0, 3).map((tag) => (
+      <li>{tag}</li>
+    ))}
+  </ul>
+</article>
+
+<style>
+  .card {
+    padding: 1rem;
+  }
+
+  .meta {
+    margin: 0;
+    color: #76ffb4;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  h3 {
+    margin: 0.45rem 0 0.5rem;
+    line-height: 1.28;
+  }
+
+  h3 a:hover {
+    color: #39e7ff;
+  }
+
+  .summary {
+    color: #c2d2fa;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  li {
+    padding: 0.18rem 0.6rem;
+    border: 1px solid rgba(57, 231, 255, 0.5);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: #9af4ff;
+  }
+</style>
